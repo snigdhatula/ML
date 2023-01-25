@@ -1,0 +1,303 @@
+Question 1
+-------------------------------------------------------------------------
+Input
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+ages.sort()
+print(f'sorted list: {ages}')
+print(f'min age: {ages[0]}, max age: {ages[-1]}')
+ages = [ages[0]] + ages + [ages[-1]]
+print(f'median age: {statistics.median(ages)}')
+print(f'average age: {sum(ages) // len(ages)}')
+print(f'range of the ages: {max(ages) - min(ages)}')
+
+Output:
+
+sorted list: [19, 19, 20, 22, 24, 24, 24, 25, 25, 26]
+min age: 19, max age: 26
+median age: 24.0
+average age: 22
+range of the ages: 7
+-------------------------------------------------------------------------
+Question 2
+--------------------------------------------------------------------------
+Input:
+#creating dog dictionary
+dog=dict()
+dog["Name"]="Snoopy"
+dog["Color"]="White"
+dog["Breed"]="Pomeranian"
+dog["legs"]=4
+dog["Age"]=8
+print(" Dog dictionary is : ",dog)
+print()
+
+#creating student dictionary
+student=dict()
+student["first_name"]="Snigdha"
+student["last_name"]="Tula"
+student["Gender"]="Female"
+student["Age"]=26
+student["Marital status"]="single"
+student["Skills"]=["Java","Springboot","AWS"]
+student["Country"]="India"
+student["City"]="Mancherial"
+student["Address"]="Gouthami Nagar"
+print("Student dictionary is : ",student)
+
+
+#length of student dictionary
+print("length of the student dictionary is : ",str(len(student)));
+
+#value of student skills and datatype
+print("student skills are : ",end='')
+print(student["Skills"])
+print("type of student skills are : ",type(student["Skills"]))
+
+#modifying student skills
+student["Skills"].append("Skill A")
+student["Skills"].append("Skill B")
+print("modified student skills : ",student["Skills"])
+
+#getting dictionary keys as list
+dog_keys=list(dog.keys())
+print("dog dictionary keys : ",dog_keys)
+student_keys=list(student.keys())
+print("student dictionary keys : ",student_keys)
+dog_values=list(dog.values())
+print("dog dictionary values : ",dog_values)
+student_values=list(student.values())
+print("student dictionary values : ",student_values)
+
+Output:
+
+Dog dictionary is :  {'Name': 'Snoopy', 'Color': 'White', 'Breed': 'Pomeranian', 'legs': 4, 'Age': 8}
+
+Student dictionary is :  {'first_name': 'Snigdha', 'last_name': 'Tula', 'Gender': 'Female', 'Age': 26, 'Marital status': 'single', 'Skills': ['Java', 'Springboot', 'AWS'], 'Country': 'India', 'City': 'Mancherial', 'Address': 'Gouthami Nagar'}
+length of the student dictionary is :  9
+student skills are : ['Java', 'Springboot', 'AWS']
+type of student skills are :  <class 'list'>
+modified student skills :  ['Java', 'Springboot', 'AWS', 'Skill A', 'Skill B']
+dog dictionary keys :  ['Name', 'Color', 'Breed', 'legs', 'Age']
+student dictionary keys :  ['first_name', 'last_name', 'Gender', 'Age', 'Marital status', 'Skills', 'Country', 'City', 'Address']
+dog dictionary values :  ['Snoopy', 'White', 'Pomeranian', 4, 8]
+student dictionary values :  ['Snigdha', 'Tula', 'Female', 26, 'single', ['Java', 'Springboot', 'AWS', 'Skill A', 'Skill B'], 'India', 'Mancherial', 'Gouthami Nagar']
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 3:
+
+Input:
+
+#creating tuples brothers and sisters
+sisters=("Sneha","Priya")
+brothers=("Kumar","Roshan","Suraj" , "Prudhvi")
+print("brothers are : ",brothers)
+print("sisters are : ",sisters)
+
+#joining brothers and sisters tuples to siblings
+siblings=brothers+sisters
+print("siblings are : ",siblings)
+print("number of siblings are : ",len(siblings))
+
+#modifying siblings tuple by adding father name and mother name
+family_members=("father","mother")+siblings
+print("family members are : ",family_members)
+
+Output:
+
+brothers are :  ('Kumar', 'Roshan', 'Suraj', 'Prudhvi')
+sisters are :  ('Sneha', 'Priya')
+siblings are :  ('Kumar', 'Roshan', 'Suraj', 'Prudhvi', 'Sneha', 'Priya')
+number of siblings are :  6
+family members are :  ('father', 'mother', 'Kumar', 'Roshan', 'Suraj', 'Prudhvi', 'Sneha', 'Priya')
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Question 4:
+
+Input:
+
+# given list of it companies
+it_companies = {"Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"}
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+age = [22, 19, 24, 25, 26, 24, 25, 24]
+print("length of it_companies : ", len(it_companies))
+
+# adding twitter to it_companies
+it_companies.add("Twitter")
+print("After adding Twitter to IT companies :", it_companies)
+
+# inserting multiple it companies
+companies = ["Cogni", "Wipro", "TCS"]
+it_companies.update(companies)
+print("After adding multiple items to IT companies :", it_companies)
+
+# removing one company
+it_companies.remove("Twitter")
+print("after removing Twitter from IT companies : ", it_companies)
+
+# Difference between remove and discard method
+# The remove() method will raise an error if the specified item does not exist, and the discard() method will not raise error.
+
+# joining A and B
+C = A.union(B)
+print("joining A and B gives :", C)
+
+# finding A intersection B
+I = A.intersection(B)
+print("A intersection B is:", I)
+
+# checking is A subset of B
+check = A.issubset(B)
+if check:
+    print("A is subset of B")
+else:
+    print("A is not a subset of B")
+
+# checking are A and B are disjoint sets
+check1 = A.isdisjoint(B)
+if check1:
+    print("A and B are disjoint sets")
+else:
+    print("A and B are not disjoint sets")
+
+# joining A with B and B with A
+A_join_B = A.union(B)
+B_join_A = B.union(A)
+print("A join B is :", A_join_B)
+print("B join A is :", B_join_A)
+
+# symmetric difference between A and B
+SY = A.symmetric_difference(B)
+print("symmetric difference between A and B is :", SY)
+
+# deleting all the sets
+it_companies.clear()
+A.clear()
+B.clear()
+
+# converting ages list to set
+age_set = set(age)
+print("length of ages list is : ", len(age))
+print("length of ages set is :", len(age_set))
+print("length of ages list is greater than the ages set")
+
+Output:
+
+length of it_companies :  7
+After adding Twitter to IT companies : {'Amazon', 'Google', 'Microsoft', 'Apple', 'IBM', 'Twitter', 'Oracle', 'Facebook'}
+After adding multiple items to IT companies : {'Twitter', 'Microsoft', 'Apple', 'IBM', 'Facebook', 'Cogni', 'TCS', 'Amazon', 'Oracle', 'Wipro', 'Google'}
+after removing Twitter from IT companies :  {'Microsoft', 'Apple', 'IBM', 'Facebook', 'Cogni', 'TCS', 'Amazon', 'Oracle', 'Wipro', 'Google'}
+joining A and B gives : {19, 20, 22, 24, 25, 26, 27, 28}
+A intersection B is: {19, 20, 22, 24, 25, 26}
+A is subset of B
+A and B are not disjoint sets
+A join B is : {19, 20, 22, 24, 25, 26, 27, 28}
+B join A is : {19, 20, 22, 24, 25, 26, 27, 28}
+symmetric difference between A and B is : {27, 28}
+length of ages list is :  8
+length of ages set is : 5
+length of ages list is greater than the ages set
+-----------------------------------------------------------------------------------------------------------
+Question 5:
+
+Input:
+
+radius=30
+Area_of_circle=3.14*(radius**2)
+print("Area of circle :",Area_of_circle)
+circum_of_circle=2*3.17*radius
+print("circumference of circle :",circum_of_circle)
+i=int(input())
+Area=3.14*(i**2)
+print("Area of circle with user input :",Area)
+
+Output:
+
+Area of circle : 2826.0
+circumference of circle : 190.2
+15
+Area of circle with user input : 706.5
+-------------------------------------------------------------------------------------------------------
+Question 6:
+
+Input:
+
+# given string to the variable a
+i="I am a teacher and I love to inspire and teach people"
+# split the given string
+j=i.split()
+# using set to remove duplicates
+k=set(j)
+# using len to count number of words
+count=len(k)
+# printing the value
+print(count)
+
+Output:
+
+10
+
+--------------------------------------------------------------------------------------------------
+Question 7:
+
+Input:
+
+#tab escape
+# declaring a string to the txt variable
+Message = "Name\tAge\tCountry\tCity\nAsabeneh\t250\tFinland\tHelsinki"
+#print the requried output
+print(Message)
+
+Output:
+
+Name	Age	Country	City
+Asabeneh	250	Finland	Helsinki
+--------------------------------------------------------------------------------------
+Question 8 :
+
+Input:
+
+#assigned variable radius
+radius=10
+#assigned area of circle formula
+area=3.14 * radius ** 2
+#print the output using string format
+print("The area of circle with radius {} is {} meters square".format(radius,area))
+
+Output:
+
+The area of circle with radius 10 is 314.0 meters square
+-----------------------------------------------------------------------------
+Question 9 :
+
+Input:
+
+Std=int(input("Enter number of student's weight to be calculated"))
+weights_in_lbs=[]
+weights_in_kg=[]
+#appending the elements into the list
+for i in range(Std):
+    weights_in_lbs.append(int(input("weight {} \n".format(i+1))))
+print(weights_in_lbs)
+#converting lbs to kilogram with exactly 2 decimal places
+for i in range(len(weights_in_lbs)):
+    lbs=0.45359237 #1lbs= 0.45359237kg
+    Std2=round(weights_in_lbs[i]*lbs,2)
+    weights_in_kg.append(Std2)
+    Std2=0
+print(weights_in_kg)
+
+Output:
+
+Enter number of student's weight to be calculated4
+weight 1 
+150
+weight 2 
+155
+weight 3 
+145
+weight 4 
+148
+[150, 155, 145, 148]
+[68.04, 70.31, 65.77, 67.13]
+-------------------------------------------------------------------------
+
